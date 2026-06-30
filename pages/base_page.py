@@ -16,3 +16,8 @@ class BasePage:
         element = self.wait.until(EC.visibility_of_element_located(locator))
         element.clear()
         element.send_keys(text)
+
+    def get_element(self, locator):
+        """Waits for an element to be visible and retrieves it."""
+        element = self.wait.until(EC.visibility_of_element_located(locator))
+        return element
