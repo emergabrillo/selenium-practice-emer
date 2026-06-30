@@ -4,10 +4,10 @@ from pages.base_page import BasePage
 
 class LoginPage(BasePage):
     # Locators for the login page elements
-    USERNAME_INPUT = (By.ID, "username")
+    USERNAME_INPUT = (By.ID, "user-name")
     PASSWORD_INPUT = (By.ID, "password")
-    SUBMIT_BUTTON = (By.ID, "submit")
-    ERROR_MESSAGE = (By.ID, "error")
+    LOGIN_BUTTON = (By.ID, "login-button")
+    ERROR_MESSAGE = (By.CLASS_NAME, "error-message-container")
 
     def enter_username(self, username):
         """Enters the username into the username input field."""
@@ -19,7 +19,7 @@ class LoginPage(BasePage):
 
     def click_login(self):
         """Clicks the login button to submit the form."""
-        self.click_element(self.SUBMIT_BUTTON)
+        self.click_element(self.LOGIN_BUTTON)
 
     def get_error_message(self):
         """Retrieves the error message displayed on the login page, once displayed."""
