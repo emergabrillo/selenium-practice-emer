@@ -14,6 +14,10 @@ def driver():
     yield driver
     driver.quit() # Ensure the browser is closed after each test
 
+@pytest.fixture(scope="session")
+def base_url():
+    return "https://www.saucedemo.com"  # Base URL and login page
+
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     # Execute all other hooks to obtain the report object
